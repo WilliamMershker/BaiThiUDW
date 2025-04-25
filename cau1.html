@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài thi Ứng dụng Web-Câu 1</title>
+
+  <style>
+    *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    .container{
+        width: 1300px;
+        margin: 0px auto;
+        border: 2px solid  solid #0099cc;;
+    }
+    header{
+        background-color: rgb(0, 162, 255);
+        height: 70px;
+        text-align: center;
+        padding: 10px;
+    }
+    #menu{
+        background-color: rgb(24, 193, 142);
+        justify-content: center;
+        text-align: center;        
+    }
+    #menu ul li{
+        display: inline-block;
+        height: 30px;
+        background-color: teal;
+        margin-right: 10px;
+        border: 1px dashed white; 
+    }
+    #menu ul li a{
+        text-decoration: none;
+        margin: 35px;
+        line-height: 30px; /* Căn giữa theo chiều dọc */       
+        color: white;  
+    }
+    #menu ul li a:hover{
+        color: red;
+    }
+    nav{
+         clear: both;
+    }
+    nav div#subnav a{
+        float: left;
+        text-decoration: none;
+        color: yellow;
+        font-size: 30px;
+        line-height: 45px;
+        margin-left: 20px;
+        text-shadow: 2px 5px 5px red; 
+        font-weight: bold;
+    }
+    nav div#subnav2 a{
+        float: right;
+        text-decoration: none;
+        color: white;
+        padding-top: 20px;
+        margin-right: 20px;
+        text-shadow: 2px 1px 2px black;
+    }
+
+    section{
+        width: 900px;       
+    }
+    article{
+        display: table-row;
+    }
+    aside#left, aside#right, section 
+    {
+        display: table-cell; /* Mỗi phần tử này sẽ giống như một ô trong bảng (cell), và nằm trên một hàng (row). */
+        vertical-align: top; /* Cho nội dung trong cell canh trên, không bị nằm giữa như mặc định */
+    }
+    /*Thanh bên trái*/
+    aside#left{
+        background-color: #aceaeb;
+        width: 200px;
+        height: 500px;
+    }
+    aside#left ul li {
+        list-style-type:none;
+        margin-left: 20px;      
+    }
+    aside#left ul li:first-child 
+    {
+        margin-top: 20px; /* Thêm khoảng cách phía trên để đẩy phần tử xuống */ 
+    }
+    aside#left ul li:nth-child(6)
+    {
+        margin-bottom: 20px
+    }
+
+    aside#left h3 {
+        background-color: blue;
+        color: white;
+        width: 100%;
+        text-align: center;
+        height: 30px;
+        line-height: 30px;
+        margin-top: 20px;
+    }
+
+    /*Thanh bên phải*/
+    aside#right{
+        background-color: #aceaeb;
+        width: 200px;
+        height: 500px;       
+    }
+    aside#right div{     
+        margin-left: 20px;
+        border: 2px solid black;
+        background-color: rgb(226, 226, 209) ;
+        margin-bottom: 20px;
+        text-align: center;
+        padding: 10px;
+        margin-top: 20px;
+        margin-right: 20px;
+        border-radius: 30px;
+        height: 140px;
+        box-shadow: 5px 5px 5px black;
+    }
+    aside#right div.ad{
+        padding: 20px;
+    }
+
+    footer{
+        text-align: center;
+        background-color: rgb(0, 162, 255);
+        height: 50px;
+        line-height: 45px;
+        color: yellow;
+    }
+   
+   /*Phần section*/
+   section#main .pic 
+    {
+        justify-content: center;
+
+         
+    }
+
+   section#main .pic img{
+        width: 390px;
+        margin-top: 20px;
+        margin-left: 50px;
+        height: 170px;
+        border: 1px dashed black;
+        height: 200px;
+        justify-content: space-around;
+        margin-left: 43px;
+        transition: opacity 1s ease, transform 1s ease;
+        cursor: pointer; /* cho cảm giác có thể click */
+   }
+
+    section#main .pic img:nth-child(3),
+    section#main .pic img:nth-child(4) {
+        margin-top: 50px;
+         
+    }
+   
+    /* ===== Dropdown menu ===== */
+    #menu ul li
+    {
+        position: relative;
+    }
+
+    /* 2. Ẩn dropdown mặc định */
+    #menu ul li .dropdown-menu {
+        display: none;
+        position: absolute;
+        list-style: none;
+        width: 160px;;/* độ rộng tối thiểu */
+        z-index: 100;    
+        
+    }
+    
+    #menu ul li .dropdown-menu li 
+    {
+        display: block;
+    }
+
+    #menu ul li .dropdown-menu li a{
+        margin-left: -12px;
+    }
+
+    #menu ul li:hover .dropdown-menu{
+        display: block;
+    }
+
+
+  </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!--Phần header-->
+        <header>
+            <nav>
+                <div id="subnav">
+                    <a href="#">BÀI THI ỨNG DỤNG WEB</a>
+                  </div>
+      
+                  <div id="subnav2">
+                    <a href="#">MSSV:2351010250 - Họ Tên:Trương Hoàng Vũ </a>
+                  </div>
+            </nav>
+          
+        </header>
+
+        <!--Phần menu-->
+        <div id="menu">
+            <ul>
+                <li><a>Câu 1</a></li>
+                <li><a href="cau2.html">Câu 2</a></li>
+                <li>
+                    <a href="#">Tin tức</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Công nghệ</a></li>
+                        <li><a href="#">Phần mềm</a></li>
+                        <li><a href="#">Phần cứng</a></li>
+                        <li><a href="#">Việc làm</a></li>
+                    </ul>
+                </li>
+            </ul>  
+        </div>
+        
+        
+        <article>
+            <!--Thanh bên trái-->
+            <aside id="left">
+                <h3 class="nnlt">Ngôn ngữ lập trình</h3>
+                <ul>
+                    <li>C++</li>
+                    <li>C#</li>
+                    <li>Java</li>
+                    <li>PHP</li>
+                    <li>Python</li>
+                    <li>MATLAB</li> 
+                </ul>
+                <h3 class="csdl">Cơ sở dữ liệu</h3>
+                <ul>
+                    <li>Access</li>
+                    <li>SQL Server</li>
+                    <li>MySQL</li>
+                    <li>Oracle</li>
+                    <li>PostgreSQL</li>
+                </ul>
+            </aside>
+
+            <!--Phần giữa-->
+            <section id="main">
+                <div class="pic">
+                    <img src="images/HTML5.png">
+                    <img src="images/js.png">
+                    <img src="images/phpmysql.png">
+                    <img src="images/java.png">
+                </div>
+                 
+            </section>
+
+            <!--Thanh bên trái-->
+            <aside id="right">
+                <div class="ad">Quảng cáo 1</div>
+                <div class="ad">Quảng cáo 2</div>
+                <div class="ad">Quảng cáo 3</div>
+              </aside>
+              
+
+        </article>
+
+        <footer>
+            Copyright 2025
+        </footer>
+
+    </div>
+    
+    <script>
+        // Lấy tất cả các thẻ img trong phần tử có class "pic"
+        var imgs = document.querySelectorAll(".pic img");
+    
+        // Duyệt qua từng thẻ img và thêm sự kiện click
+        for (let i = 0; i < imgs.length; i++) 
+        {
+            // Khi nhấp vào một ảnh
+            imgs[i].onmouseover = function() 
+            {
+                let img = this; // Lưu lại "this" (ảnh mà người dùng nhấp vào)
+    
+                // Thực hiện thay đổi style của ảnh khi nhấp vào (giảm độ mờ và phóng to một chút)
+                img.style.opacity = "0.3"; // Giảm độ mờ xuống 30%
+                img.style.transform = "scale(0.98)"; // Thu nhỏ ảnh xuống một chút
+    
+                // Sau 2 giây, phục hồi lại ảnh về trạng thái ban đầu
+                setTimeout(() => {
+                    img.style.opacity = "1"; // Đặt độ mờ lại 100%
+                    img.style.transform = "scale(1)"; // Phóng to ảnh về kích thước ban đầu
+                }, 1500); // Sau 2 giây
+            }
+        }
+    </script>
+    
+    
+    <script>
+
+
+    </script>
+     
+</body>
+</html>

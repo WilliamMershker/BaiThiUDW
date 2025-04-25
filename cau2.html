@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài thi Ứng dụng Web-Câu 2</title>
+
+  <style>
+    *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    .container{
+        width: 1300px;
+        margin: 0px auto;
+        border: 2px solid  solid #0099cc;;
+    }
+    header{
+        background-color: rgb(0, 162, 255);
+        height: 70px;
+        text-align: center;
+        padding: 10px;
+    }
+    #menu{
+        background-color: rgb(24, 193, 142);
+        justify-content: center;
+        text-align: center;        
+    }
+    #menu ul li{
+        display: inline-block;
+        height: 30px;
+        background-color: teal;
+        margin-right: 10px;
+        border: 1px dashed white; 
+    }
+    #menu ul li a{
+        text-decoration: none;
+        margin: 35px;
+        line-height: 30px; /* Căn giữa theo chiều dọc */       
+        color: white;  
+    }
+    #menu ul li a:hover{
+        color: red;
+    }
+    nav{
+         clear: both;
+    }
+    nav div#subnav a{
+        float: left;
+        text-decoration: none;
+        color: yellow;
+        font-size: 30px;
+        line-height: 45px;
+        margin-left: 20px;
+        text-shadow: 2px 5px 5px red; 
+        font-weight: bold;
+    }
+    nav div#subnav2 a{
+        float: right;
+        text-decoration: none;
+        color: white;
+        padding-top: 20px;
+        margin-right: 20px;
+        text-shadow: 2px 1px 2px black;
+    }
+
+    section{
+        width: 900px;       
+    }
+    article{
+        display: table-row;
+    }
+    aside#left, aside#right, section 
+    {
+        display: table-cell; /* Mỗi phần tử này sẽ giống như một ô trong bảng (cell), và nằm trên một hàng (row). */
+        vertical-align: top; /* Cho nội dung trong cell canh trên, không bị nằm giữa như mặc định */
+    }
+    /*Thanh bên trái*/
+    aside#left{
+        background-color: #aceaeb;
+        width: 200px;
+        height: 500px;
+    }
+    aside#left ul li {
+        list-style-type:none;
+        margin-left: 20px;      
+    }
+    aside#left ul li:first-child 
+    {
+        margin-top: 20px; /* Thêm khoảng cách phía trên để đẩy phần tử xuống */ 
+    }
+    aside#left ul li:nth-child(6)
+    {
+        margin-bottom: 20px
+    }
+
+    aside#left h3 {
+        background-color: blue;
+        color: white;
+        width: 100%;
+        text-align: center;
+        height: 30px;
+        line-height: 30px;
+        margin-top: 20px;
+    }
+
+    /*Thanh bên phải*/
+    aside#right{
+        background-color: #aceaeb;
+        width: 200px;
+        height: 500px;       
+    }
+    aside#right div{     
+        margin-left: 20px;
+        border: 2px solid black;
+        background-color: rgb(226, 226, 209) ;
+        margin-bottom: 20px;
+        text-align: center;
+        padding: 10px;
+        margin-top: 20px;
+        margin-right: 20px;
+        border-radius: 30px;
+        height: 140px;
+        box-shadow: 5px 5px 5px black;
+    }
+    aside#right div.ad{
+        padding: 20px;
+    }
+
+    footer{
+        text-align: center;
+        background-color: rgb(0, 162, 255);
+        height: 50px;
+        line-height: 45px;
+        color: yellow;
+    }
+    
+    section#main p.program{
+        color: red;
+        text-align: center;
+        margin-top: 20px;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 35px;
+        font-weight: bold;
+    }
+    section#main p.element, section#main p.sapxepchantanglegiam{
+        margin-left: 80px;
+        margin-top: 30px;
+    }
+    section#main input[type="number"]{
+        width: 80px;
+    }
+   
+    section#main .onhapmang{
+        margin-left: 80px;
+        margin-top: 20px;
+    }
+    section#main .onhapmang input[type="text"], section#main .sapxepchantanglegiam input[type="text"]
+    {
+        width: 350px;
+    }
+
+    /* ===== Dropdown menu ===== */
+    #menu ul li
+    {
+        position: relative;
+    }
+
+    /* 2. Ẩn dropdown mặc định */
+    #menu ul li .dropdown-menu {
+        display: none;
+        position: absolute;
+        list-style: none;
+        width: 160px;;/* độ rộng tối thiểu */
+        z-index: 100;    
+        
+    }
+    
+    #menu ul li .dropdown-menu li 
+    {
+        display: block;
+    }
+
+    #menu ul li .dropdown-menu li a{
+        margin-left: -12px;
+    }
+
+    #menu ul li:hover .dropdown-menu{
+        display: block;
+    }
+  </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!--Phần header-->
+        <header>
+            <nav>
+                <div id="subnav">
+                    <a href="#">BÀI THI ỨNG DỤNG WEB</a>
+                  </div>
+       
+                  <div id="subnav2">
+                    <a href="#">MSSV:2351010250 - Họ Tên:Trương Hoàng Vũ </a>
+                  </div>
+            </nav>
+          
+        </header>
+
+        <!--Phần menu-->
+        <div id="menu">
+            <ul>
+                <li><a href="cau1.html">Câu 1</a></li>
+                <li><a>Câu 2</a></li>
+                <li>
+                    <a href="#">Tin tức</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Công nghệ</a></li>
+                        <li><a href="#">Phần mềm</a></li>
+                        <li><a href="#">Phần cứng</a></li>
+                        <li><a href="#">Việc làm</a></li>
+                    </ul>
+                </li>
+            </ul>  
+        </div>
+        
+        <article>
+            <!--Thanh bên trái-->
+            <aside id="left">
+                <h3 class="nnlt">Ngôn ngữ lập trình</h3>
+                <ul>
+                    <li>C++</li>
+                    <li>C#</li>
+                    <li>Java</li>
+                    <li>PHP</li>
+                    <li>Python</li>
+                    <li>MATLAB</li> 
+                </ul>
+                <h3 class="csdl">Cơ sở dữ liệu</h3>
+                <ul>
+                    <li>Access</li>
+                    <li>SQL Server</li>
+                    <li>MySQL</li>
+                    <li>Oracle</li>
+                    <li>PostgreSQL</li>
+                </ul>
+            </aside>
+
+            <!--Phần giữa-->
+            <section id="main">
+                <p class="program">CHƯƠNG TRÌNH XỬ LÝ MẢNG</p>
+                 <p class="element">
+                    Số phần tử:<input type="number" id="so">
+                    Giá trị nhỏ nhất:<input type="number" id="minso">
+                    Giá trị lớn nhất: <input type="number" id="maxso">                                    
+                </p>
+            
+                <p class="onhapmang">
+                    <input type="text" id="input"> <button onclick="taoMangNgauNhien()">Tạo mảng</button>
+                </p>
+                <p class="sapxepchantanglegiam">
+                    <input type="text" id="input2"> <button onclick="sapXepChanTangLeGiam()">sắp xếp chẵn tăng,lẻ giảm</button>
+                </p>
+            </section>
+
+            <!--Thanh bên trái-->
+            <aside id="right">
+                <div class="ad">Quảng cáo 1</div>
+                <div class="ad">Quảng cáo 2</div>
+                <div class="ad">Quảng cáo 3</div>
+              </aside>
+              
+
+        </article>
+
+        <footer>
+            Copyright 2025
+        </footer>
+
+    </div>
+
+    <script>
+
+        function taoMangNgauNhien()
+        {
+            // Lấy giá trị từ các ô nhập và chuyển đổi sang số
+            const n   = parseInt(document.getElementById('so').value);
+            const min = parseInt(document.getElementById('minso').value);
+            const max = parseInt(document.getElementById('maxso').value);
+
+            var mang = [];
+            for (let i = 0; i < n; i++) 
+            {
+                let soNgauNhien = Math.floor(Math.random() * (max - min + 1)) + min;
+                mang.push(soNgauNhien);
+            }
+
+            document.getElementById("input").value = mang.join(",");
+
+        }
+
+        function sapXepChanTangLeGiam()
+        {
+            let input = document.getElementById("input").value;
+
+            let arr = input.split(",").map(Number);
+
+            let chan = arr.filter(function(x){
+                return x % 2 === 0
+            }).sort(function(a,b){
+                return a - b; // sắp xếp tăng
+            });
+
+            let le = arr.filter(function(x){
+                return x % 2 !== 0
+            }).sort(function(a,b){
+                return b - a; // sắp xếp giảm
+            });
+
+            const result = chan.concat(le);
+
+            document.getElementById("input2").value = result.join(",");
+
+        }
+    </script>
+  
+
+</body>
+</html>
